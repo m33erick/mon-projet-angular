@@ -7,11 +7,34 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isAuth = false;
+  lastUpdate = new Promise((reslove, reject) => {
+    const date = new Date();
+    setTimeout(
+      () => {
+        reslove(date);
+      }, 2000
+    );
+  });
+
+  appareils =[
+    {
+      name: 'Machine à laver',
+      status: 'éteint'
+    },
+    {
+      name: 'Frigo',
+      status: 'allumé'
+    },
+    {
+      name: 'ordinateur',
+      status: 'éteint'
+    }
+  ]
 
   appareilOne = 'Machine à laver';
   appareilTwo = 'Télévision';
   appareilThree = 'Ordinateur';
-  
+
   constructor() {
       setTimeout(
         () => {
