@@ -9,11 +9,11 @@ import { AppareilService } from './services/appareil.service';
 })
 export class AppComponent implements OnInit {
   isAuth = false;
-  lastUpdate = new Promise((reslove, reject) => {
+  lastUpdate = new Promise((resolve, reject) => {
     const date = new Date();
     setTimeout(
       () => {
-        reslove(date);
+        resolve(date);
       }, 2000
     );
   });
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
       this.appareils = this.appareilService.appareils;
     }
-    
+
     onAllumer() {
       this.appareilService.switchOnAll();
     }
